@@ -21,22 +21,8 @@ Bot = Client(
 @Bot.on_message(filters.command("start"))
 async def start(_, m: Message):
     messy = m.from_user.mention
-    keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("Channel", url="https://t.me/szteambots"),
-                InlineKeyboardButton("Support", url="https://t.me/slbotzone"),
-            ],
-            [
-                InlineKeyboardButton(
-                    "Source code", url="https://github.com/ImDenuwan/Bin-Checker-Bot"
-                )
-            ],
-        ]
-    )
     await m.reply_text(
-        f"Hi! {messy} \nI can Check bins Valid or Invalid.\n\nTo see more check /help command",
-        reply_markup=keyboard,
+        f"Hi! {messy} \nI can Check bins Valid or Invalid.\n\nTo see more check /help command"
     )
 
 
@@ -80,13 +66,13 @@ async def bin(_, m: Message):
 
             mfrom = m.from_user.mention
             caption = f"""
-    ╔ Valid :- `{res} ✅`\n╚ Bin :- `{bi}`\n\n╔ Brand :- `{ve}`\n╠ Type :- `{ty}`\n╚ Level :- `{le}`\n\n╔ Bank :- `{ban} ({co})`\n╠ Country :- `{nm} {em}`\n╠ Alpha2 :- `{cod}`\n╚ DialCode :- `{dial}`\n\n**↠ Checked By :-** {mfrom}\n**↠ __Bot By :-** [Denuwan](https://github.com/ImDenuwan/Bin-Checker-Bot)__
+    ╔ Valid :- `{res} ✅`\n╚ Bin :- `{bi}`\n\n╔ Brand :- `{ve}`\n╠ Type :- `{ty}`\n╚ Level :- `{le}`\n\n╔ Bank :- `{ban} ({co})`\n╠ Country :- `{nm} {em}`\n╠ Alpha2 :- `{cod}`\n╚ DialCode :- `{dial}`\n\n**↠ Checked By :-** {mfrom}\n**↠ __Bot By :-** [Barath](https://t.me/ImCrazy_Boy)__
     """
             await mafia.edit(caption, disable_web_page_preview=True)
             
         except Exception as e:
             await bot.reply_text(f"**Oops Error!**\n{e}\n\n**Report This Bug to Bot Owner.**")
 
-print("Bot IS Alive Now")
+print("Bot Is Alive Now")
 
 Bot.run()
